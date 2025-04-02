@@ -1,9 +1,9 @@
 process.env.NODE_ENV = "test"; // テスト環境を明示的に設定
-require("dotenv").config({ path: ".env.test" });
+require("dotenv").config({ path: process.env.NODE_ENV === "test" ? ".env.test" : ".env" });
 
 const request = require("supertest");
 const db = require("./db");
-const app = require("./server"); // 修正後の server.js をインポート
+const app = require("./server"); // Express アプリをインポート
 
 beforeAll(async () => {
     await db.query(`
