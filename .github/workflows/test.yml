@@ -42,6 +42,8 @@ jobs:
           echo "DB_NAME=${{ vars.DB_NAME }}" >> .env.test
           echo "DB_PORT=${{ vars.DB_PORT }}" >> .env.test
           echo "PORT=${{ vars.PORT }}" >> .env.test
+      - name: Debug .env.test
+        run: cat .env.test
 
       - name: Run tests
         run: npm test
