@@ -35,13 +35,13 @@ jobs:
 
       - name: Create .env.test file
         run: |
-          echo "NODE_ENV=${{ vars.NODE_ENV }}" >> .env.test
-          echo "DB_HOST=${{ vars.DB_HOST }}" >> .env.test
-          echo "DB_USER=${{ vars.DB_USER }}" >> .env.test
-          echo "DB_PASSWORD=${{ vars.DB_PASSWORD }}" >> .env.test
-          echo "DB_NAME=${{ vars.DB_NAME }}" >> .env.test
-          echo "DB_PORT=${{ vars.DB_PORT }}" >> .env.test
-          echo "PORT=${{ vars.PORT }}" >> .env.test
+          echo "NODE_ENV=${{ env.NODE_ENV }}" >> .env.test
+          echo "DB_HOST=${{ env.DB_HOST }}" >> .env.test
+          echo "DB_USER=${{ env.DB_USER }}" >> .env.test
+          echo "DB_PASSWORD=${{ env.DB_PASSWORD }}" >> .env.test
+          echo "DB_NAME=${{ env.DB_NAME }}" >> .env.test
+          echo "DB_PORT=${{ venvars.DB_PORT }}" >> .env.test
+          echo "PORT=${{ env.PORT }}" >> .env.test
       - name: Debug .env.test
         run: cat .env.test
 
