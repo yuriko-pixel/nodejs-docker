@@ -40,7 +40,7 @@ jobs:
           echo "DB_USER=${{ env.DB_USER }}" >> .env.test
           echo "DB_PASSWORD=${{ env.DB_PASSWORD }}" >> .env.test
           echo "DB_NAME=${{ env.DB_NAME }}" >> .env.test
-          echo "DB_PORT=${{ venvars.DB_PORT }}" >> .env.test
+          echo "DB_PORT=${{ env.DB_PORT }}" >> .env.test
           echo "PORT=${{ env.PORT }}" >> .env.test
       - name: Debug .env.test
         run: cat .env.test
